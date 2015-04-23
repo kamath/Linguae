@@ -1,2 +1,2 @@
-# QuickFood
+# Foodary
 Tinder for Food
