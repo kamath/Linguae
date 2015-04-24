@@ -13,22 +13,32 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
     <script>
-        if( navigator.geolocation )
+      if( navigator.geolocation )
+      {
+       // Call getCurrentPosition with success and failure callbacks
+       navigator.geolocation.getCurrentPosition( success, fail );
+      }
+      else
+      {
+       alert("Sorry, your browser does not support geolocation services.");
+      }
+      function success(position)
+      {
+        var longitude = position.coords.longitude;
+        var latitude = position.coords.latitude;
+        var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
+        $.getJSON(url,function(data)
         {
-           // Call getCurrentPosition with success and failure callbacks
-           navigator.geolocation.getCurrentPosition( success, fail );
-        }
-        else
-        {
-           alert("Sorry, your browser does not support geolocation services.");
-        }
-        function success(position)
-     {
-         var longitude = position.coords.longitude;
-         var latitude = position.coords.latitude;
-         var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
-         window.location.replace(url);
-     }
+          var items = [];
+          $.each( data, function( key, val ) {
+            items.push( "<li id='" + key + "'>" + val + "</li>" );
+          });
+          $( "<ul/>", {
+            "class": "my-new-list",
+            html: items.join( "" )
+          }).appendTo( "body" );
+        });
+      }
 
      function fail()
      {
