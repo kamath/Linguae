@@ -26,7 +26,7 @@
       {
         var longitude = position.coords.longitude;
         var latitude = position.coords.latitude;
-        var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
+        var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&photoreference&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
         initialize(latitude,longitude)
       }
 
@@ -47,7 +47,7 @@ function initialize(lat,long) {
   service.nearbySearch(request, callback);
 }
 
-function callback(results, status) {
+function callback(results, status) {h
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
