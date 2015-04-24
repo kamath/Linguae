@@ -34,6 +34,24 @@
      {
         alert("Whoops");
      }
+     function initialize() {
+        var input = document.getElementById('searchTextField');
+        var options = {
+    types: ['(cities)'],
+    componentRestrictions: {country: 'us'}
+    };
+
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+       alert(this.types[0]);
+       alert(this.types[1]);          
+    });
+
+
+
+
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
   <body>
