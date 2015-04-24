@@ -27,24 +27,7 @@
          var longitude = position.coords.longitude;
          var latitude = position.coords.latitude;
          var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+longitude+","+latitude+"&radius=500&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
-         $.ajax({
-        type: 'GET',
-        url: url,
-        async: false,
-        jsonpCallback: 'jsonCallback',
-        contentType: "application/json",
-        dataType: 'jsonp',
-        success: function (data) {
-             for (i = 0; i < data.results.length; i++) {
-            myAddress[i] = data.results[i].formatted_address;
-            document.getElementById("message").innerHTML += myAddress[i] + "<br>";
-            console.log(myAddress[i]);
-        };
-        },
-        error: function (e) {
-            console.log(e.message);
-        }
-    });
+         window.location.replace(url);
      }
 
      function fail()
