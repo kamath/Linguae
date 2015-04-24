@@ -20,16 +20,16 @@ p
 .jumbotron h1
 {
   font-family: 'Sigmar One';
-  font-size: 100px
+  font-size: 100px;
 }
 
 .jumbotron
 {
   height: 100%;
-  background-image: url(../img/hamburger.jpg);
+  background-image: url(../img/bg.jpg);
   background-size: cover;
   background-color: rgba(255,255,255,0.5);
-  color: #FFF;
+  color: #A52;
   padding-top: 25%;
   background-attachment: fixed;
   margin-bottom: 0;
