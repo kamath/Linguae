@@ -26,44 +26,10 @@
       {
         var longitude = position.coords.longitude;
         var latitude = position.coords.latitude;
-<<<<<<< HEAD
         var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
         var results = jQuery.parseJSON(url);
         alert(results[0].types[0]);
       }
-
-=======
-        var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&photoreference&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
-        initialize(latitude,longitude)
-      }
-
-      var map;
-var service;
-var infowindow;
-
-function initialize(lat,long) {
-  var pyrmont = new google.maps.LatLng(lat,long);
-
-  var request = {
-    location: pyrmont,
-    radius: '5000',
-    types: ['food']
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
-}
-
-function callback(results, status) {h
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      var place = results[i];
-      alert(results[i]);
-    }
-  }
-}
-
->>>>>>> 97bc57ab6e11b3f027f5b58926b88dfbd55bf1fa
      function fail()
      {
         alert("Whoops");
