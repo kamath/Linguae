@@ -27,6 +27,7 @@
         var longitude = position.coords.longitude;
         var latitude = position.coords.latitude;
         var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
+        alert("SWAG");
         $.getJSON(url, function(data) {
         $.each(data, function(index,place) {
             alert(place.name);
