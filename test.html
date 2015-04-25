@@ -27,8 +27,8 @@
       {
         var longitude = position.coords.longitude;
         var latitude = position.coords.latitude;
-        var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&opennow&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
-        document.write("SWAG");
+        var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=5000&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ";
+        document.write("Eyyo, it worked. But for some reason, like Andy, we can't show you them.");
         $.getJSON(url, function(data) {
         $.each(data, function(index,place) {
             document.write(place.name);
@@ -37,7 +37,7 @@
       }
      function fail()
      {
-        alert("Whoops");
+        alert("Andy's coding skills are subpar, sorry.");
      }
     </script>
   </head>
