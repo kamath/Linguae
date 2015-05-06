@@ -37,7 +37,7 @@
       }
       var http = createRequestObject(); 
       function sende(text) {
-        http.open('get', 'action_answer_placelist.php?action='+text);
+        http.open('get', 'http://foodary.herokuapp.com/action_answer_placelist.php?action='+text);
         http.onreadystatechange = handleResponse;
         http.send(null);
       }
