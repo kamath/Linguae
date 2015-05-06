@@ -3,6 +3,7 @@
 	$data = json_decode($json,true);
 	$echo = "";
 	foreach($data as $item) { //foreach element in $arr
-    	echo $echo.$item['results']['name']."\n"; //etc
+    	$echo = $echo.$item['results']['name']."\n"; //etc
 	}
+	echo $echo;
 ?>
