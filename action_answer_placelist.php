@@ -13,15 +13,14 @@
                     $location = $result['geometry']['location']['lat'].",".$result['geometry']['location']['lng'];
                     $spacename = str_replace(" ", "+", $result['name']);
                     $spaceaddress = str_replace(" ", "+", $result['vicinity']);
-
                     $loc = "http://www.google.com/maps/dir/35.1093724,-80.748323/".$spacename.",+".$spaceaddress."/@".$location.",12z";
-				    echo "<img src=\"https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyDsBsq9Dei-OnXAYzrSZHC2s6Mvx8_XCxo&photoreference=".$r['photo_reference']."&maxheight=200\"><br>".$result['name']."`".$result['vicinity']."<br> Open: ".$result['opening_hours']['open_now']."ccc".$loc.";";	
+    			    echo "<img src=\"https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyDsBsq9Dei-OnXAYzrSZHC2s6Mvx8_XCxo&photoreference=".$r['photo_reference']."&maxheight=200\"><br>".$result['name']."`".$result['vicinity']."ccc".$loc.";";	
                 }
     		}
     	}
     	else
     	{
-			echo "<img src=\"".$result['icon']."\"><br>".$result['name']."`".$result['vicinity'].";";    		
+			echo "<img src=\"".$result['icon']."\" height=\"200\"><br>".$result['name']."`".$result['vicinity'].";";    		
     	}
 	}
 ?>
