@@ -36,22 +36,27 @@
         http.onreadystatechange = handleResponse;
         http.send(null);
       }
-      var final;
       function handleResponse() {
         if(http.readyState == 4){
           var response = http.responseText;
           //      document.writeln(response);
           var str = response;
-          final = str.split(",");
+          final = str.split(";");
           var myStringArray = final
           var arrayLength = myStringArray.length;
           for (var i = 0; i < arrayLength; i++) {
-            $(".jumbotron").append("<div class=\""+i+"\"><h1>"+myStringArray[i]+"</h1><br><button class=\"btn-default btn\" onclick=\"yes("+i+")\">Yes (arbitrary button for now)</button> <button class=\"btn-default btn\" onclick=\"no("+i+")\">No</button></div>");
-
+            var address = myStringArray[i].split(":");
+            $(".jumbotron").append("<div class=\""+i+"\"><h1>"+address[0]+"</h1><div class=\""+i+"details\"><h3>"+address[1]+"</h3></div><br><button class=\"btn-default btn\" onclick=\"yes("+i+")\">Yes (arbitrary button for now)</button> <button class=\"btn-default btn\" onclick=\"no("+i+")\">No</button> <button class=\"btn-default btn\" onclick=\"details("+i+")\">Details</button></div>");
             $("."+i).hide();
+            $("."+i+"details").hide();
             $(".0").show();
           }
         }
+      }
+      $(".hide").hide();
+      function details(num)
+      {
+        $("."+num+"details").show();
       }
       function no(num)
       { 
@@ -65,7 +70,7 @@
     </script>
   </head>
   <body>
-    <div class="jumbotron" id="main" align="center" style="padding-top:25%;height:100%;background:#FFF">
+    <div class="jumbotron" id="main" align="center" style="padding-top:20%;height:100%;background:#FFF">
     </div>
     <img src="img/powered-by-google-on-white.png">
   </body>
