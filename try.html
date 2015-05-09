@@ -42,14 +42,19 @@
           //      document.writeln(response);
           var str = response;
           final = str.split(";");
-          var myStringArray = final
+          var myStringArray = final;
           var arrayLength = myStringArray.length;
-          for (var i = 0; i < arrayLength; i++) {
-            var address = myStringArray[i].split(":");
-            $(".jumbotron").append("<div class=\""+i+"\"><h1>"+address[0]+"</h1><div class=\""+i+"details\"><h3>"+address[1]+"</h3></div><br><button class=\"btn-default btn\" onclick=\"yes("+i+")\">Yes (arbitrary button for now)</button> <button class=\"btn-default btn\" onclick=\"no("+i+")\">No</button> <button class=\"btn-default btn\" onclick=\"details("+i+")\">Details</button></div>");
+          for (var i = 0; i < arrayLength-1; i++) {
+            var address = myStringArray[i].split("`");
+            var image = address[1].split("~");
+            $(".jumbotron").append("<div class=\""+i+"\"><h1>"+address[0]+"</h1><div class=\""+i+"details\"><h3>"+image[0]+"</h3></div><br><button class=\"btn-default btn\" onclick=\"yes("+i+")\">Yes</button> <button class=\"btn-default btn\" onclick=\"no("+i+")\">No</button> <button class=\"btn-default btn\" onclick=\"details("+i+")\">Details</button></div>");
             $("."+i).hide();
             $("."+i+"details").hide();
             $(".0").show();
+            if(i==arrayLength-1)
+            {
+              alert("Sorry, that's all we got");
+            }
           }
         }
       }
@@ -60,8 +65,8 @@
       }
       function no(num)
       { 
-        $("."+num).hide();
-        $("."+(num+1)).show();
+        $("."+num).fadeOut(0);
+        $("."+(num+1)).fadeIn();
       }
       function fail()
       {

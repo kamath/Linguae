@@ -4,6 +4,17 @@
 	foreach ($jsonContent['results'] as $result) {
     	// now you have the $result array that contains the location of the place
     	// and the name ($result['formatted_address'], $result['name']) and other data.
-    	echo $result['name'].":".$result['vicinity'].";";
+    	if(isset($result['photos']))
+		{
+			foreach($result['photos'] as $r)
+    		{	
+				echo "<img src=\"https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ&photoreference=".$r['photo_reference']."&maxwidth=300\"><br>".$result['name']."`".$result['vicinity'].";";	
+    		}
+    	}
+    	else
+    	{
+			echo "<img src=\"".$result['icon']."\"><br>".$result['name']."`".$result['vicinity'].";";    		
+    	}
 	}
 ?>
+

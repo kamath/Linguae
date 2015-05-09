@@ -4,7 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Muli);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
-@import url(http://fonts.googleapis.com/css?family=Sigmar+One);
+@import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(metro-bootstrap.min.css);
 
 h1
@@ -19,7 +19,7 @@ p
 
 .jumbotron h1
 {
-  font-family: 'Sigmar One';
+  font-family: 'Lato';
   font-size: 100px;
 }
 
@@ -33,13 +33,6 @@ p
   padding-top: 25%;
   background-attachment: fixed;
   margin-bottom: 0;
-}
-
-.btn-default
-{
-  color: #FFF;
-  background: transparent;
-  border: 1px #FFF solid;
 }
 
 .inline
