@@ -8,7 +8,7 @@
 		{
 			foreach($result['photos'] as $r)
     		{	
-				echo "<img src=\"https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ&photoreference=".$r['photo_reference']."&maxwidth=300\"><br>".$result['name']."`".$result['vicinity'].";";	
+				echo "<img src=\"https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ&photoreference=".$r['photo_reference']."&maxheight=200\"><br>".$result['name']."`".$result['vicinity'].";";	
     		}
     	}
     	else
