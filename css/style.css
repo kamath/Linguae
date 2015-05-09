@@ -7,6 +7,11 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(metro-bootstrap.min.css);
 
+body
+{
+  overflow-x:hidden;
+}
+
 h1
 {
   font-size: 54px
