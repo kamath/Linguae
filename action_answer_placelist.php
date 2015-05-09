@@ -1,5 +1,5 @@
 <?php
-	$res = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$_GET['action']."&radius=5000&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ");
+	$res = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$_GET['action']."&radius=5000&types=food&key=AIzaSyDsBsq9Dei-OnXAYzrSZHC2s6Mvx8_XCxo");
 	$jsonContent = json_decode($res, true);
 	foreach ($jsonContent['results'] as $result) {
     	// now you have the $result array that contains the location of the place
@@ -8,7 +8,10 @@
 		{
 			foreach($result['photos'] as $r)
     		{	
-				echo "<img src=\"https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ&photoreference=".$r['photo_reference']."&maxheight=200\"><br>".$result['name']."`".$result['vicinity'].";";	
+                if(in_array("restaurant", $result['types']))
+                {
+				echo "<img src=\"https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyDsBsq9Dei-OnXAYzrSZHC2s6Mvx8_XCxo&photoreference=".$r['photo_reference']."&maxheight=200\"><br>".$result['name']."`".$result['vicinity'].";";	
+                }
     		}
     	}
     	else
