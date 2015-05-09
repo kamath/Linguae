@@ -47,7 +47,8 @@
           for (var i = 0; i < arrayLength-1; i++) {
             var address = myStringArray[i].split("`");
             var image = address[1].split("~");
-            $(".jumbotron").append("<div class=\""+i+"\"><h1>"+address[0]+"</h1><div class=\""+i+"details\"><h3>"+image[0]+"</h3></div><br><button class=\"btn-default btn\" onclick=\"yes("+i+")\">Yes</button> <button class=\"btn-default btn\" onclick=\"no("+i+")\">No</button> <button class=\"btn-default btn\" onclick=\"details("+i+")\">Details</button></div>");
+            var loc = image[0].split("ccc");
+            $(".jumbotron").append("<div class=\""+i+"\"><h1>"+address[0]+"</h1><div class=\""+i+"details\"><h3>"+loc[0]+"</h3></div><br><a href=\""+loc[1]+"\"><button class=\"btn-default btn\">Yes</button></a> <button class=\"btn-default btn\" onclick=\"no("+i+")\">No</button> <button class=\"btn-default btn\" onclick=\"details("+i+")\">Details</button></div>");
             $("."+i).hide();
             $("."+i+"details").hide();
             $(".0").show();
