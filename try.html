@@ -48,7 +48,7 @@
             var address = myStringArray[i].split("`");
             var image = address[1].split("~");
             var loc = image[0].split("ccc");
-            $(".jumbotron").append("<div class=\""+i+"\"><h1>"+address[0]+"</h1><div class=\""+i+"details\"><h3>"+loc[0]+"</h3></div><br><a href=\""+loc[1]+"\"><button class=\"btn-default btn\" style=\"border-radius:50%;color:#0F0\"><i class=\"fa fa-thumbs-up\" style=\"font-size:36px\"></i></button></a> <button class=\"btn-default btn\" style=\"border-radius:50%;color:#00F\" onclick=\"details("+i+")\"><i class=\"fa fa-ellipsis-h\" style=\"font-size:36px\"></i></button> <button class=\"btn-default btn\" style=\"border-radius:50%;color:#F00\" onclick=\"no("+i+")\"><i class=\"fa fa-thumbs-down\" style=\"font-size:36px\"></i></button></div>");
+            $(".jumbotron").append("<div class=\"card "+i+"\"><h1>"+address[0]+"</h1><div class=\""+i+"details\"><h3>"+loc[0]+"</h3></div><br><a href=\""+loc[1]+"\" target=\"blank\"><button class=\"btn-default btn\" style=\"border-radius:50%;color:#0F0\"><i class=\"fa fa-thumbs-up\" style=\"font-size:36px\"></i></button></a> <button class=\"btn-default btn\" style=\"border-radius:50%;color:#00F\" onclick=\"details("+i+")\"><i class=\"fa fa-ellipsis-h\" style=\"font-size:36px\"></i></button> <button class=\"btn-default btn\" style=\"border-radius:50%;color:#F00\" onclick=\"no("+i+")\"><i class=\"fa fa-thumbs-down\" style=\"font-size:36px\"></i></button></div>");
             $("."+i).hide();
             $("."+i+"details").hide();
             $(".0").show();
