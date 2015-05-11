@@ -1,5 +1,5 @@
 <?php
-	$res = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$_GET['action']."&radius=5000&types=food&key=AIzaSyDsBsq9Dei-OnXAYzrSZHC2s6Mvx8_XCxo");
+	$res = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$_GET['action']."&radius=5000&types=food&key=AIzaSyAZwbQCDTf-AKn0dvdNahrgXOqkZQTydTQ");
 	$jsonContent = json_decode($res, true);
 	foreach ($jsonContent['results'] as $result) {
     	// now you have the $result array that contains the location of the place
