@@ -20,7 +20,11 @@
     	}
     	else
     	{
-			echo "<img src=\"".$result['icon']."\" height=\"200\"><br>".$result['name']."`".$result['vicinity'].";";    		
+            $location = $result['geometry']['location']['lat'].",".$result['geometry']['location']['lng'];
+            $spacename = str_replace(" ", "+", $result['name']);
+            $spaceaddress = str_replace(" ", "+", $result['vicinity']);
+            $loc = "http://www.google.com/maps/dir/".$_GET['action']."/".$spacename.",+".$spaceaddress;
+			echo "<img src=\"".$result['icon']."\" height=\"200\"><br>".$result['name']."`".$result['vicinity']."ccc".$loc.";";
     	}
 	}
 ?>
