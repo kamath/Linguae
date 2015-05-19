@@ -147,253 +147,207 @@ for($a = 0;$a<=count($pieces)-1; $a++)
 	$wordnom = $pi[$a][0];
 	$wordgen = $pi[$a][1];
 	$wordgend = $pi[$a][2];
-	echo "<strong>".$pieces[$a]."</strong><br>";
-	if($pi[$a][0]=="domus")
-	{
-		echo "domus<br>";
-		echo "domi/domus<br>";
-		echo "domo/domui<br>";
-		echo "domum<br>";
-		echo "domo/domu<br><br>";
-		echo "domus";
-		echo "domorum/domuum";
-		echo "domibus";
-		echo "domos/domus";
-		echo "domibus";
-		echo "LOCATIVE: DOMI";
-	}
-	else if (strpos($pi[$a][2], "pl") !== false)
-	{
-		if(strpos($pi[$a][2],"n")!==false)
-		{
-			if(substr($pi[$a][1],-3)=="ium")
-			{
-				$root = substr($pi[$a][1], 0,-2);
-				$nomacc = $root."a"."<br>";
-				$gen = $root."um"."<br>";
-				$databl = $root."ibus"."<br>";
-				echo $nomacc;
-				echo $gen;
-				echo $databl;
-				echo $nomacc;
-				echo $databl;
-				echo "<hr>";
-			}
-			else if (substr($pi[$a][1],-4)=="orum") {
-				$root = substr($pi[$a][1], 0,-4);
-				$nomacc = $pi[$a][0]."<br>";
-				$gen = $pi[$a][1]."<br>";
-				$databl = $root."is"."<br>";
-				echo $nomacc;
-				echo $gen;
-				echo $databl;
-				echo $nomacc;
-				echo $databl;
-				echo "<hr>";
-			}
-			else if (substr($pi[$a][1],-2)=="um") {
-				$root = substr($pi[$a][1], 0,-2);
-				$nomacc = $pi[$a][0]."<br>";
-				$gen = $pi[$a][1]."<br>";
-				$databl = $root."ibus"."<br>";
-				echo $nomacc;
-				echo $gen;
-				echo $databl;
-				echo $nomacc;
-				echo $databl;
-				echo "<hr>";
-			}
-		}
-		else
-		{
-			if(substr($pi[$a][1],-3)=="ium")
-			{
-				$root = substr($pi[$a][1], 0,-3);
-				$nomacc = $root."es"."<br>";
-				$gen = $pi[$a][1]."<br>";
-				$databl = $root."ibus"."<br>";
-				echo $nomacc;
-				echo $gen;
-				echo $databl;
-				echo $nomacc;
-				echo $databl;
-				echo "<hr>";	
-			}
-			else if (substr($pi[$a][1],-4)=="orum")
-			{
-				$root = substr($pi[$a][1], 0,-4);
-				$nom = $pi[$a][1]."<br>";
-				$gen = $pi[$a][1]."<br>";
-				$acc = $root."os<br>";
-				$databl = $root."is"."<br>";
-				echo $nomacc;
-				echo $gen;
-				echo $databl;
-				echo $acc;
-				echo $databl;
-				echo "<hr>";	
-			}
-			else if (substr($pi[$a][1],-4)=="um")
-			{
-				$root = substr($pi[$a][1], 0,-4);
-				$nomacc = $pi[$a][0]."<br>";
-				$gen = $pi[$a][1]."<br>";
-				$databl = $root."ibus"."<br>";
-				echo $nomacc;
-				echo $gen;
-				echo $databl;
-				echo $nomacc;
-				echo $databl;
-				echo "<hr>";	
-			}			
-		}
-	}
-	else if(substr($pi[$a][1],-2)=="ae")
-	{
-		echo $pi[$a][0]."<br>";
-		$root = substr($pi[$a][1],0,-2);
-		$gen = $root."ae<br>";
-		echo $gen;
-		echo $gen;
-		echo $root."am<br>";
-		echo $root."a<br><br>";
-		echo $root."ae<br>";
-		echo $root."arum<br>";
-		echo $root."is<br>";
-		echo $root."as<br>";
-		echo $root."is<br>";
-		echo "<hr>";
-	}
-	else if(substr($pi[$a][1],-2)=="ei")
-	{
-		echo $pi[$a][0]."<br>";
-		$root = substr($pi[$a][1],0,-2);
-		$gen = $root."ei<br>";
-		echo $gen;
-		echo $gen;
-		echo $root."em<br>";
-		echo $root."e<br><br>";
-		echo $root."es<br>";
-		echo $root."erum<br>";
-		echo $root."ebus<br>";
-		echo $root."es<br>";
-		echo $root."ebus<br>";
-		echo "<hr>";
-	}
-	else if(substr($pi[$a][1],-2)=="us")
-	{
-		if(strpos($pi[$a][2], "n")!==false)
-		{
-			echo $pi[$a][0]."<br>";
-			$root = substr($pi[$a][1],0,-2);
-			$gen = $root."us<br>";
-			$dat = $root."u<br>";
-			echo $gen;
-			echo $dat;
-			echo $root."u<br>";
-			echo $root."u<br><br>";
-			echo $root."ua<br>";
-			echo $root."uum<br>";
-			echo $root."ibus<br>";
-			echo $root."ua<br>";
-			echo $root."ibus<br>";
-			echo "<hr>";
-		}
-		else
-		{
-			echo $pi[$a][0]."<br>";
-			$root = substr($pi[$a][1],0,-2);
-			$gen = $root."us<br>";
-			$dat = $root."ui<br>";
-			echo $gen;
-			echo $dat;
-			echo $root."um<br>";
-			echo $root."u<br><br>";
-			echo $root."us<br>";
-			echo $root."uum<br>";
-			echo $root."ibus<br>";
-			echo $root."us<br>";
-			echo $root."ibus<br>";
-			echo "<hr>";	
-		}
-	}
-	else if(substr($pi[$a][1],-2)=="is")
-	{
-		echo $pi[$a][0]."<br>";
-		$root = substr($pi[$a][1], 0,-2);
-		$gen = substr($pi[$a][1],-2);
-		echo $root.$gen."<br>";
-		$dat = "i";
-		echo $root.$dat."<br>";
-		if(strpos($pi[$a][2], "n.")!==false)
-		{
-			$acc = $pi[$a][0];
-			$nompl = "a";
-			echo $acc."<br>";
-		}
-		else
-		{
-			$acc = "em";
-			$nompl = "es";
-			echo $root.$acc."<br>";
-		}
-		$abl = "e";
-		echo $root.$abl."<br>";
-		echo "<br>";
-		echo $root.$nompl."<br>";
-		$gen = "um";
-		echo $root.$gen."<br>";
-		$dat = "ibus";
-		echo $root.$dat."<br>";
-		if($pi[$a][2]==" n.")
-		{
-			$acc = $pi[$a][0];
-			echo $acc."<br>";
-		}
-		else
-		{
-			$acc = "em";
-			echo $root.$acc."<br>";
-		}
-		$abl = "ibus";
-		echo $root.$abl."<br>";
-		echo "<hr>";
-	}
-	else
-	{
-		if(strpos($pi[$a][2], "n")!==false)
-		{
-			echo $pi[$a][0]."<br>";
-			$root = substr($pi[$a][1],0,-1);
-			$gen = $root."i<br>";
-			$dat = $root."o<br>";
-			echo $gen;
-			echo $dat;
-			echo $root."um<br>";
-			echo $root."o<br><br>";
-			echo $root."a<br>";
-			echo $root."orum<br>";
-			echo $root."is<br>";
-			echo $root."a<br>";
-			echo $root."is<br>";
-			echo "<hr>";
-		}
-		else
-		{
-			echo $pi[$a][0]."<br>";
-			$root = substr($pi[$a][1],0,-1);
-			$gen = $root."i<br>";
-			$dat = $root."o<br>";
-			echo $gen;
-			echo $dat;
-			echo $root."um<br>";
-			echo $root."o<br><br>";
-			echo $root."i<br>";
-			echo $root."orum<br>";
-			echo $root."is<br>";
-			echo $root."os<br>";
-			echo $root."is<br>";
-			echo "<hr>";	
-		}
-	}
+	if($wordnom=="domus")
+  {
+    echo "domus<br>";
+    echo "domi/domus<br>";
+    echo "domo/domui<br>";
+    echo "domum<br>";
+    echo "domo/domu<br><br>";
+    echo "domus";
+    echo "domorum/domuum";
+    echo "domibus";
+    echo "domos/domus";
+    echo "domibus";
+    echo "LOCATIVE: DOMI";
+  }
+  else if (strpos($wordgend, "pl") !== false)
+  {
+    if(strpos($wordgend,"n")!==false)
+    {
+      if(substr($wordgen,-3)=="ium")
+      {
+        $root = substr($wordgen, 0,-2);
+        $nom = $root."a"."<br>";
+        $acc == $nom;
+        $gen = $root."um"."<br>";
+        $dat = $root."ibus"."<br>";
+        $abl = $dat;
+      }
+      else if (substr($wordgen,-4)=="orum") {
+        $root = substr($wordgen, 0,-4);
+        $nom = $wordnom."<br>";
+        $acc = $nom;
+        $gen = $wordgen."<br>";
+        $dat = $root."is"."<br>";
+        $abl = $dat;
+      }
+      else if (substr($wordgen,-2)=="um") {
+        $root = substr($wordgen, 0,-2);
+        $nom = $wordnom."<br>";
+        $acc = $nom;
+        $gen = $wordgen."<br>";
+        $dat = $root."ibus"."<br>";
+        $abl = $dat;
+      }
+      $nompl = "";
+      $genpl = $nompl;
+      $datpl = $nompl;
+      $accpl = $nompl;
+      $ablpl = $nompl;
+    }
+    else
+    {
+      if(substr($wordgen,-3)=="ium")
+      {
+        $root = substr($wordgen, 0,-3);
+        $nom = $root."es"."<br>";
+        $acc = $nom;
+        $gen = $wordgen."<br>";
+        $dat = $root."ibus"."<br>";       
+        $abl = $dat;
+      }
+      else if (substr($wordgen,-4)=="orum")
+      {
+        $root = substr($wordgen, 0,-4);
+        $nom = $wordgen."<br>";
+        $gen = $wordgen."<br>";
+        $acc = $root."os<br>";
+        $dat = $root."is"."<br>";
+        $abl = $dat;  
+      }
+      else if (substr($wordgen,-4)=="um")
+      {
+        $root = substr($wordgen, 0,-4);
+        $nom = $wordnom."<br>";
+        $acc = $nom;
+        $gen = $wordgen."<br>";
+        $dat = $root."ibus"."<br>";
+        $abl = $dat;
+      }     
+    }
+  }
+  else if(substr($wordgen,-2)=="ae")
+  {
+    $nom = $wordnom."<br>";
+    $root = substr($wordgen,0,-2);
+    $gen = $root."ae<br>";
+    $dat = $root."ae<br>";
+    $acc = $root."am<br>";
+    $abl = $root."a<br><br>";
+    $nompl = $root."ae<br>";
+    $genpl = $root."arum<br>";
+    $datpl = $root."is<br>";
+    $accpl = $root."as<br>";
+    $ablpl = $root."is<br>";
+    
+  }
+  else if(substr($wordgen,-2)=="ei" && substr($wordnom,-2)=="es")
+  {
+    $nom = $wordnom."<br>";
+    $root = substr($wordgen,0,-2);
+    $gen = $root."ei<br>";
+    $dat = $gen;
+    $acc = $root."em<br>";
+    $abl = $root."e<br><br>";
+    $nompl = $root."es<br>";
+    $genpl = $root."erum<br>";
+    $datpl = $root."ebus<br>";
+    $accpl = $root."es<br>";
+    $ablpl = $root."ebus<br>";
+    
+  }
+  else if(substr($wordgen,-2)=="us")
+  {
+    if(strpos($wordgend, "n")!==false)
+    {
+      $nom = $wordnom."<br>";
+      $root = substr($wordgen,0,-2);
+      $gen = $root."us<br>";
+      $dat = $root."u<br>";
+      $acc = $nom;
+      $abl = $dat;
+      $nompl = $root."ua<br>";
+      $genpl = $root."uum<br>";
+      $datpl = $root."ibus<br>";
+      $accpl = $root."ua<br>";
+      $ablpl = $root."ibus<br>";
+      
+    }
+    else
+    {
+      $nom = $wordnom."<br>";
+      $root = substr($wordgen,0,-2);
+      $gen = $root."us<br>";
+      $dat = $root."ui<br>";
+      $acc = $root."um<br>";
+      $abl = $root."u<br><br>";
+      $nompl = $root."us<br>";
+      $genpl = $root."uum<br>";
+      $datpl = $root."ibus<br>";
+      $accpl = $root."us<br>";
+      $ablpl = $root."ibus<br>";
+        
+    }
+  }
+  else if(substr($wordgen,-2)=="is")
+  {
+    $nom = $wordnom."<br>";
+    $root = substr($wordgen, 0,-2);
+    $gen = $root."is<br>";
+    $dat = $root."i<br>";
+    if(strpos($wordgend, "n")!==false)
+    {
+      $nompl = $root."a<br>";
+      $accpl = $root."a<br>";
+      $acc = $nom;
+    }
+    else
+    {
+      $nompl = $root."es<br>";
+      $accpl = $nompl;
+      $acc = $root."em<br>";
+    }
+    $abl = $root."e<br><br>";
+    $genpl = $root."um<br>";
+    $datpl = $root."ibus<br>";
+    $ablpl = $root."ibus<br>";
+    
+  }
+  else
+  {
+    if(strpos($wordgend, "n")!==false)
+    {
+      $nom = $wordnom."<br>";
+      $root = substr($wordgen,0,-1);
+      $gen = $root."i<br>";
+      $dat = $root."o<br>";
+      $acc = $nom;
+      $abl = $root."o<br><br>";
+      $nompl = $root."a<br>";
+      $genpl = $root."orum<br>";
+      $ablpl = $root."is<br>";
+      $accpl = $root."a<br>";
+      $datpl = $root."is<br>";
+      
+    }
+    else
+    {
+      $nom = $wordnom."<br>";
+      $root = substr($wordgen,0,-1);
+      $gen = $root."i<br>";
+      $dat = $root."o<br>";
+      $acc = $root."um<br>";
+      $abl = $root."o<br><br>";
+      $nompl = $root."i<br>";
+      $genpl = $root."orum<br>";
+      $ablpl = $root."is<br>";
+      $accpl = $root."os<br>";
+      $datpl = $root."is<br>";
+        
+    }
+  }
+  $toprint = "<strong>".$wordnom."</strong><br>".$gen.$dat.$acc.$abl.$nompl.$genpl.$datpl.$accpl.$ablpl;
+  $toJSON = array('nomsing' => $nom, 'nompl' = $nompl, 'gensing' => $gen, 'genpl' = $genpl, 'datsing' => $dat, 'datpl' = $datpl, 'accsing' => $acc, 'accpl' = $accpl, 'ablsing' => $abl, 'ablpl' = $ablpl);
+  $json = json_encode($toJSON);
 }
