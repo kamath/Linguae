@@ -205,6 +205,8 @@
     }
   }
   $toprint = "<strong>".$wordnom."</strong><br>".$gen.$dat.$acc.$abl.$nompl.$genpl.$datpl.$accpl.$ablpl;
+  $toJSON = array('nomsing' => $nom, 'nompl' = $nompl, 'gensing' => $gen, 'genpl' = $genpl, 'datsing' => $dat, 'datpl' = $datpl, 'accsing' => $acc, 'accpl' = $accpl, 'ablsing' => $abl, 'ablpl' = $ablpl);
+  $json = json_encode($toJSON);
 }
 
 ?>
