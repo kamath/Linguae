@@ -47,7 +47,11 @@
         $dat = $root."ibus"."<br>";
         $abl = $dat;
       }
-      echo $nom;echo $acc;echo $gen;echo $dat;echo $abl;
+      $nompl = "";
+      $genpl = $nompl;
+      $datpl = $nompl;
+      $accpl = $nompl;
+      $ablpl = $nompl;
     }
     else
     {
@@ -78,7 +82,6 @@
         $dat = $root."ibus"."<br>";
         $abl = $dat;
       }     
-      echo $nom;echo $acc;echo $gen;echo $dat;echo $abl;
     }
   }
   else if(substr($wordgen,-2)=="ae")
@@ -223,7 +226,7 @@
     <nav class="nav" align="center">
       <ul class="nav">
         <li><img src="img/legion.png" height="42"></li>
-        <li class="logo">Linguae</li>
+        <li class="logo">Linguae Latinae</li>
         <li class="notlogo">&middot;</li>
         <li class="notlogo logo">Latin Parser</li>
       </ul>
@@ -240,7 +243,6 @@
             <input type="submit" class="btn btn-primary">
           </form>
           <h3 id="w"><?php echo $toprint; ?></h3>
-          <h3 id="definition"></h3>
         </div>
       </div>
     </div>
