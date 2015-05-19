@@ -6,12 +6,14 @@
 		<form method="get">
 			<input name="nom" placeholder="nominative">
 			<input name="gen" placeholder="genitive">
-			<input name="gend" placeholder="gender">
+			<input name="gend" placeholder="gender (if plural write .pl., i.e. n.pl. for neuter plural)">
 			<input type="submit">
 		</form>
 	</body>
 </html>
 <?php
+	if(isset($_GET['nom']) && isset($_GET['gen']) && isset($_GET['gend']))
+	{
 	$wordnom = $_GET['nom'];
 	$wordgen = $_GET['gen'];
 	$wordgend = $_GET['gend'];
@@ -264,4 +266,5 @@
 			echo "<hr>";	
 		}
 	}
+}
 ?>
