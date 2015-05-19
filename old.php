@@ -144,6 +144,9 @@ $pieces = explode("`",$words);
 for($a = 0;$a<=count($pieces)-1; $a++)
 {
 	$pi[$a] = explode(",", $pieces[$a]);
+	$wordnom = $pi[$a][0];
+	$wordgen = $pi[$a][1];
+	$wordgend = $pi[$a][2];
 	echo "<strong>".$pieces[$a]."</strong><br>";
 	if($pi[$a][0]=="domus")
 	{
