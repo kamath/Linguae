@@ -1,2 +1,2 @@
-# Foodary
-Tinder for Food
+andykamath.github.io
+====================

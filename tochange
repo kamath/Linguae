@@ -1,0 +1,85 @@
+
+					<br><br>
+					<h1><strong><a href="//andykamath.com/BlueWebsite">Blue</a></strong></h1>
+					<h2>Skills utilized: Bootstrap framework for HTML, jQuery.js, HTML5, CSS, and Javascript</h2>
+					<p>This website was made as a template for restaurants that would potentially want a website</p>
+					<br><br>
+					<h1><strong><a href="https://www.youtube.com/watch?v=1e3-3rNt5rE">Chucky</a></strong></h1>
+					<h2>Skills utilized: C#, Azure, SQL Server</h2>
+					<p>A simple desktop assistant</p>
+					<br><br>
+					<h1><strong><a href="//github.com/andykamath/iluvyoumommy">I Love You Mommy</a></strong></h1>
+					<h2>Skills utilized: C# for Windows Phone 8/8.1, XAML</h2>
+					<p>Comes up with pre-made texts to automatically respond to your mother when she texts you</p>
+					<br><br>
+					<h1><strong><a href="//andykamath.com/instagram">Instagram Collater</a></strong></h1>
+					<h2>Skills utilized: Instagram JS API, Instafeed.js, Bootstrap framework for HTML, jQuery.js, HTML5, CSS, and Javascript</h2>
+					<p>This website collates all your Instagram posts into a nice website</p>
+					<br><br>
+					<h1><strong><a href="//github.com/andykamath/MORGAN">MORGAN</a></strong></h1>
+					<h2>Skills utilized: C#</h2>
+					<p>My first real program made for a science fair</p>
+					<br><br>
+					<h1><strong><a href="//github.com/andykamath/passwords">Passwords</a></strong></h1>
+					<h2>Skills utilized: C#, Cryptography</h2>
+					<p>A C# Console application used to encrypt, decrypt, and manage passwords</p>
+					<br><br>
+					<h1><strong><a href="//phsjcl.com">Providence JCL</a></strong></h1>
+					<h2>Skills utilized: Bootstrap framework for HTML, jQuery.js, HTML5, CSS, and Javascript</h2>
+					<p>This website was made for my school's Junior Classical League, or Latin Club, again of which I was appointed Webmaster</p>
+					<br><br>
+					<a href="//andykamath.com/phstsa"><h1><strong>Providence TSA</strong></h1></a>
+					<h2>Skills utilized: Metro-Bootstrap framework for HTML, jQuery.js, HTML5, CSS, and Javascript</h2>
+					<p><a href="//andykamath.com/phstsa">This website</a> was made for my school's Technology Students Association, of which I am participating in the Webmaster and Software Development categories to further improve my skills and maybe earn awards</p>
+					<br><br>
+					<h1><strong><a href="//andykamath.com/stopthebullying">Stop The Bullying</a></strong></h1>
+					<h2>Skills utilized: Bootstrap framework for HTML, jQuery.js, HTML5, CSS, and Javascript</h2>
+					<p>The week before Winter Break, there was a threat to our school that made it seem like the suspect was bullied. I made this website to help people come up with ways to reduce bullying in schools</p>
+					<br><br>
+					<h1><strong><a href="//github.com/andykamath/TaskHat">TaskHat</a></strong></h1>
+					<h2>Skills utilized: C#, System.IO class to read/write from Text File</h2>
+					<p>Made to manage tasks easily - and then pick a random task when you want one</p>
+					<br><br>					
+				</div>
+			</div>
+			<div class="contactme">
+				<h1>Contact me!</h1>
+				<p>Email: andy@hackgician.net</p>
+				<a href="//github.com/andykamath">Github</a>
+				<a href="//youtube.com/MrCandonce">YouTube</a>
+				<a href="//medium.com/@andykamath">Blog</a>
+				<a href="//instagram.com/baendy">Instagram</a>
+				<a href="//twitter.com/baesedandy">Twitter</a>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#loader").show();
+			$("#wholething").hide();
+			$(window).load(function() {
+	    		$("#loader").hide();
+	    		$("#wholething").show();
+			});
+			$(function() {
+  				$('a[href*=#]:not([href=#])').click(function() {
+    				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      					var target = $(this.hash);
+      					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      					if (target.length) {
+        					$('html,body').animate({
+          						scrollTop: target.offset().top
+        					}, 1000);
+        					return false;
+      					}
+    				}
+  				});
+			});
+			var text = ['I\'m a sophomore', 'I\'m a full-stack web developer', 'I\'m an Entrepreneur', 'I\'m a .NET developer', 'I\'m a musician', 'I\'m a mathematician', 'I\'m a scientist', 'I\'m pentalingual'];
+    		i = 0,
+
+			setInterval(function ()
+			{
+    			$("#about").text(text[i++ % text.length]);
+			}, 1000);
+		</script>
+	</body>
+</html>

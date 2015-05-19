@@ -4,49 +4,41 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Muli);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
-@import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(metro-bootstrap.min.css);
-
-body
-{
-  overflow-x:hidden;
-}
-
-h1
-{
-  font-size: 54px
-}
-
-p
-{
-  font-size: 24px
-}
-
-.jumbotron h1
-{
-  font-family: 'Lato';
-  font-size: 100px;
-}
-
 .jumbotron
 {
-  height: 100%;
-  background-image: url(../img/bg.jpg);
-  background-size: cover;
-  background-color: rgba(255,255,255,0.5);
-  color: #A52;
-  padding-top: 25%;
-  background-attachment: fixed;
-  margin-bottom: 0;
+	height: 100%;
+	background-color: #FFF
 }
 
-.inline
+.nav
 {
-  display: inline;
+	padding-top: 5;
+	width: 100%;
+	padding-bottom: 5;
 }
 
-.about
+.nav li
 {
-  padding-top: 25px;
-  padding-bottom: 25px;
+	text-decoration: none;
+	list-style-type: none;
+	display: inline;
+}
+
+.logo
+{
+	font-size: 20px
+}
+
+.notlogo
+{
+	margin-left: 20px
+}
+
+.col-md-3
+{
+	height: 100%;
+	background-image: url(../img/legion.png);
+	background-size: contain;
+	background-repeat: no-repeat;
 }
