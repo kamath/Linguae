@@ -214,7 +214,10 @@ for($a = 0;$a<=count($pieces)-1; $a++)
   $search = $_GET['search'];
   if($jsond->{'nom'}==$search || $jsond->{'gen'}==$search || $jsond->{'dat'}==$search || $jsond->{'acc'}==$search || $jsond->{'abl'}==$search || $jsond->{'nompl'}==$search || $jsond->{'genpl'}==$search || $jsond->{'datpl'}==$search || $jsond->{'accpl'}==$search || $jsond->{'ablpl'}==$search)
   {
-    $end = "\"".$search."\" comes from ".$jsond->{'nom'}.", meaning ".$jsond->{'definition'};
+    if(isset($search))
+    {
+     $end = "\"".$search."\" comes from ".$jsond->{'nom'}.", meaning ".$jsond->{'definition'}; 
+    }
   }
 }
 ?>
@@ -250,7 +253,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
             <input name="search" placeholder="The word of difficulty">
             <input type="submit" class="btn btn-primary">
           </form>
-          <h3 id="w"><?php if(isset($_GET['search']){echo $end;} ?></h3>
+          <h3 id="w"><?php echo $end; ?></h3>
           <h2>N.B - ONLY WORKS WITH <b><u><i><strong>NOUNS</strong></i></u></b> found in <a href="http://phslatin.cmswiki.wikispaces.net/file/view/Latin3.ComprehensiveReviewVocabulary.docx/519408008/Latin3.ComprehensiveReviewVocabulary.docx">this</a> list</h2>
           <h3>Made with <i class="fa fa-heart animated infinite pulse" style="color:red"></i> and <a href="http://github.com/andykamath/linguae">Open-Sourced</a> by <a href="http://andykamath.com">Andy Kamath</a></h3>
         </div>
