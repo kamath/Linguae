@@ -33,6 +33,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
         $gen = $root."um"."";
         $dat = $root."ibus"."";
         $abl = $dat;
+        $dec = "3pl";
       }
       else if (substr($wordgen,-4)=="orum") {
         $root = substr($wordgen,0,-4);
@@ -41,6 +42,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
         $gen = $wordgen."";
         $dat = $root."is"."";
         $abl = $dat;
+        $dec = "2pl";
       }
       else if (substr($wordgen,-2)=="um") {
         $root = substr($wordgen,0,-2);
@@ -49,6 +51,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
         $gen = $wordgen."";
         $dat = $root."ibus"."";
         $abl = $dat;
+        $dec = "34pl";
       }
       $nompl = "";
       $genpl = $nompl;
@@ -66,6 +69,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
         $gen = $wordgen."";
         $dat = $root."ibus"."";       
         $abl = $dat;
+        $dec = "3pl";
       }
       else if (substr($wordgen,-4)=="orum")
       {
@@ -75,6 +79,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
         $acc = $root."os";
         $dat = $root."is"."";
         $abl = $dat;  
+        $dec = "2pl";
       }
       else if (substr($wordgen,-4)=="um")
       {
@@ -84,6 +89,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
         $gen = $wordgen."";
         $dat = $root."ibus"."";
         $abl = $dat;
+        $dec = "34pl";
       }     
     }
   }
@@ -100,7 +106,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
     $datpl = $root."is";
     $accpl = $root."as";
     $ablpl = $root."is";
-    
+    $dec = "1";
   }
   else if(substr($wordgen,-2)=="ei" && substr($wordnom,-2)=="es")
   {
@@ -115,7 +121,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
     $datpl = $root."ebus";
     $accpl = $root."es";
     $ablpl = $root."ebus";
-    
+    $dec = "5";
   }
   else if(substr($wordgen,-2)=="us")
   {
@@ -132,7 +138,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
       $datpl = $root."ibus";
       $accpl = $root."ua";
       $ablpl = $root."ibus";
-      
+      $dec = "4";
     }
     else
     {
@@ -147,7 +153,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
       $datpl = $root."ibus";
       $accpl = $root."us";
       $ablpl = $root."ibus";
-        
+      $dec = "4";
     }
   }
   else if(substr($wordgen,-2)=="is")
@@ -172,7 +178,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
     $genpl = $root."um";
     $datpl = $root."ibus";
     $ablpl = $root."ibus";
-    
+    $dec = "3";
   }
   else
   {
@@ -205,6 +211,7 @@ for($a = 0;$a<=count($pieces)-1; $a++)
       $accpl = $root."os";
       $datpl = $root."is";
     }
+    $dec = "2";
   }
   $toprint = "<strong>".$wordnom."</strong>".$gen.$dat.$acc.$abl.$nompl.$genpl.$datpl.$accpl.$ablpl;
   $toJSON = array("nom"=>$wordnom,"gen"=>$gen,"dat"=>$dat,"acc"=>$acc,"abl"=>$abl,"nompl"=>$nompl,"genpl"=>$genpl,"datpl"=>$datpl,"accpl"=>$accpl,"ablpl"=>$ablpl,$nom=>"nom",$dat=>"dat",$gen=>"gen",$dat=>"dat",$acc=>"acc",$abl=>"abl",$nompl=>"nompl",$genpl=>"genpl",$datpl=>"datpl",$accpl=>"accpl",$ablpl=>"ablpl","definition"=>$worddef);
@@ -216,7 +223,77 @@ for($a = 0;$a<=count($pieces)-1; $a++)
   {
     if(isset($search))
     {
-     $end = "\"".$search."\" comes from ".$jsond->{'nom'}.", meaning ".$jsond->{'definition'}; 
+      $case = $jsond->{$search};
+      if(substr($wordgen,-2)=="ae")
+      {
+        if($case=="nompl")
+        {
+          $case = "genitive/dative singular or nominative plural";
+        }
+        if($case=="abl")
+        {
+          $case = "nominative or ablative";
+        }
+        if($case=="ablpl")
+        {
+          $case = "ablative or dative plural";
+        }
+      }
+      else if(substr($wordgen,-1)=="i")
+      {
+        if($case=="nompl")
+        {
+          $case = "genitive singular or nominative plural";
+        }
+        if($case=="abl")
+        {
+          $case = "dative or ablative";
+        }
+        if($case=="ablpl")
+        {
+          $case = "ablative or dative plural";
+        }
+      }
+      else if(substr($wordgen,-2)=="is")
+      {
+        if($case=="accpl")
+        {
+          $case = "accusative or nominative plural";
+        }
+        if($case=="ablpl")
+        {
+          $case = "ablative or dative plural";
+        }
+      }
+      else if(substr($wordgen,-2)=="us")
+      {
+       if($case=="ablpl")
+        {
+          $case = "ablative or dative";
+        }
+      }
+      else if(substr($wordgen,-2)=="ei")
+      {
+        if($case=="ablpl")
+        {
+          $case = "ablative or dative";
+        }
+      }
+      else if(substr($wordgen,-4)=="orum")
+      {
+        if($case=="ablpl")
+        {
+          $case = "ablative or dative";
+        }
+      }
+      else if(substr($wordgen,-2)=="um")
+      {
+        if($case=="ablpl")
+        {
+          $case = "ablative or dative";
+        }
+      }
+      $end = "\"".$search."\" comes from ".$jsond->{'nom'}.", meaning ".$jsond->{'definition'}." in the ".$case." cases"; 
     }
   }
 }
